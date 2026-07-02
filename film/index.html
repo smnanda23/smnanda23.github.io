@@ -24,10 +24,19 @@
   nav ul a{font-family:'Helvetica Neue',Arial,sans-serif;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
   nav ul a:hover{color:var(--accent);text-decoration:none}
 
-  header{position:relative;min-height:88vh;display:flex;align-items:flex-end;
-    background:linear-gradient(180deg,rgba(12,11,9,.25) 0%,rgba(12,11,9,.55) 60%,var(--bg) 100%),
-    url('assets/bab_window.jpg') center/cover no-repeat}
-  header .wrap{padding-bottom:72px}
+  header{position:relative;min-height:88vh;display:flex;align-items:flex-end;overflow:hidden;
+    background:
+      radial-gradient(ellipse 900px 620px at 82% 18%, rgba(201,161,90,.16), transparent 62%),
+      radial-gradient(ellipse 700px 460px at 12% 85%, rgba(90,110,140,.08), transparent 65%),
+      linear-gradient(160deg,#12100c 0%,#0c0b09 55%,#0a0908 100%)}
+  header::before{content:"";position:absolute;inset:0;pointer-events:none;
+    background:linear-gradient(115deg,transparent 55%,rgba(201,161,90,.05) 62%,transparent 72%)}
+  header::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.35;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E")}
+  .frameline{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(201,161,90,.35),transparent);pointer-events:none}
+  .frameline.top{top:11%}
+  .frameline.bottom{bottom:9%}
+  header .wrap{padding-bottom:72px;position:relative;z-index:2}
   .kicker{font-family:'Helvetica Neue',Arial,sans-serif;font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
   h1{font-size:clamp(44px,7vw,84px);font-weight:400;letter-spacing:.04em;line-height:1.05}
   .tagline{margin-top:16px;font-size:clamp(16px,2vw,20px);color:var(--dim);font-style:italic;max-width:620px}
@@ -80,6 +89,8 @@
 </nav>
 
 <header>
+  <div class="frameline top"></div>
+  <div class="frameline bottom"></div>
   <div class="wrap">
     <div class="kicker">Cinematographer &nbsp;·&nbsp; Colorist</div>
     <h1>Nandha</h1>
@@ -116,7 +127,18 @@
     <div class="title">Narumugaiyae</div>
     <div class="meta"><b>Cinematographer</b> · Producer's Cut · 4K</div>
     <p class="body">A pilot film shot on location — lake work from a crane rig over open water, choreographed fight sequences, and an end-to-end 4K finishing pipeline from location scout to producer's cut.</p>
-    <div class="grid g2">
+    <div class="grid g3">
+      <img src="assets/nm_swordeyes.jpg" alt="Warrior sighting along his blade">
+      <img src="assets/nm_curvedsword.jpg" alt="Warrior with curved sword, close-up">
+      <img src="assets/nm_grapple.jpg" alt="Duel locked at the lakeshore">
+      <img src="assets/nm_goldenwide.jpg" alt="Arrows in flight, golden hour wide">
+      <img src="assets/nm_horsemeet.jpg" alt="Rider meets archer by the water">
+      <img src="assets/nm_archer.jpg" alt="Archer in traditional dress, warm grade">
+      <img src="assets/nm_aerial.jpg" alt="Aerial of misty lakeshore, figures in flight">
+      <img src="assets/nm_archercloseup.jpg" alt="Archer close-up with bow, golden light">
+      <img src="assets/nm_topdown.jpg" alt="Top-down drone shot of the lakeshore duel">
+    </div>
+    <div class="grid g2" style="margin-top:10px">
       <img src="assets/pilot_crane.jpg" alt="Operating camera on crane rig over water">
       <img src="assets/pilot_crew.jpg" alt="Full crew photo with camera">
     </div>
@@ -124,32 +146,155 @@
 </section>
 
 <section id="development">
+  <style>
+    .step{display:grid;grid-template-columns:190px 1fr;gap:26px;margin-top:44px;align-items:start}
+    .step .no{font-family:'Helvetica Neue',Arial,sans-serif;color:var(--accent);font-size:13px;letter-spacing:.2em;text-transform:uppercase;position:sticky;top:76px}
+    .step .no b{display:block;font-size:34px;color:var(--ink);font-weight:300;font-family:Georgia,serif;margin-bottom:4px}
+    .step p{color:var(--dim);font-size:15px;max-width:640px;margin-bottom:16px}
+    .swatches{display:flex;height:86px;border:1px solid var(--line);margin-bottom:16px}
+    .swatches div{flex:1;position:relative}
+    .swatches span{position:absolute;bottom:6px;left:8px;font-family:'Helvetica Neue',Arial,sans-serif;font-size:10.5px;letter-spacing:.08em;color:rgba(0,0,0,.55)}
+    @media(max-width:720px){.step{grid-template-columns:1fr;gap:10px}.step .no{position:static}}
+  </style>
   <div class="wrap">
     <h2>In Development</h2>
     <div class="title">Sanda Seivom</div>
     <div class="meta"><b>Cinematographer / Color Design</b> · Pre-production</div>
-    <p class="body">A combat-sport drama set in Kannagi Nagar, Chennai — where a community's game becomes its weapon against a corrupted power. Currently in pre-production: script (draft 3 with scene breakdown), full color palette design, custom LUTs, shot grammar, and equipment planning.</p>
-    <div class="grid g2">
-      <img src="assets/ss_colorref.jpg" alt="Sanda Seivom color reference">
-      <img src="assets/ss_triad.jpg" alt="Graffiti triad color palette">
+    <p class="body">A combat-sport drama set in Kannagi Nagar, Chennai — where a community's game becomes its weapon against a corrupted power. Script at draft 3 with scene breakdown. Below: how the film's color language is being designed, from the streets of the location to the final base palette and custom LUTs.</p>
+    <div class="step">
+      <div class="no"><b>01</b>Location Survey</div>
+      <div>
+        <p>The palette starts where the story lives. Kannagi Nagar photographed and street-viewed block by block — its resettlement housing, festival nights, and sun-bleached facades set the film's chromatic ground truth.</p>
+        <div class="grid g2">
+          <img src="assets/ss_location.jpg" alt="Kannagi Nagar location survey collage">
+          <img src="assets/ss_street.jpg" alt="Kannagi Nagar street view used for color sampling">
+        </div>
+      </div>
     </div>
-    <p class="body" style="margin-top:40px"><span style="color:var(--ink);font-size:22px">The Last Offering</span><br>
-    A mist-shrouded mountain-village tale, written by Rahul Kabali — attached as cinematographer. Screenplay complete.</p>
+
+    <div class="step">
+      <div class="no"><b>02</b>Palette Extraction</div>
+      <div>
+        <p>Colors sampled directly from the location — steel-blue sky, lime-washed walls, dust, rust and autorickshaw orange — then structured on the wheel. Chosen harmony: <b style="color:var(--ink)">triad</b>.</p>
+        <div class="swatches">
+          <div style="background:#8CA9D8"><span>#8CA9D8</span></div>
+          <div style="background:#9FB7D3"><span>#9FB7D3</span></div>
+          <div style="background:#B4A193"><span>#B4A193</span></div>
+          <div style="background:#B4765B"><span>#B4765B</span></div>
+          <div style="background:#DF9143"><span>#DF9143</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="no"><b>03</b>Paint Tests</div>
+      <div>
+        <p>The triadic scheme tested physically — watercolor mixes on paper before a single frame is graded. If it doesn't hold as pigment, it won't hold on screen.</p>
+        <div class="grid g2">
+          <img src="assets/ss_paint.jpg" alt="Hand-painted triadic watercolor swatch tests">
+          <img src="assets/ss_colorref.jpg" alt="Photographic color reference frame">
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="no"><b>04</b>Texture &amp; Graffiti</div>
+      <div>
+        <p>Faded-tone graffiti and weathered-wall references define how color should age in the frame — worn, layered, sun-eaten. Watercolor textures guide diffusion and bleed for the grade.</p>
+        <div class="grid g2">
+          <img src="assets/ss_graffiti.jpg" alt="Faded tone graffiti reference collage">
+          <img src="assets/ss_texture.jpg" alt="Texture and pattern watercolor references">
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="no"><b>05</b>Base Palette</div>
+      <div>
+        <p>Everything resolves into the working base palette — the master swatch set that drives production design, costume, and the custom LUTs built for on-set monitoring and the final grade.</p>
+        <div class="grid g2">
+          <img src="assets/ss_basepalette.jpg" alt="Final base palette grid with color wheel">
+          <img src="assets/ss_triad.jpg" alt="Graffiti triad palette">
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
 <section id="stills">
+  <style>
+    .masonry{columns:3;column-gap:12px;margin-top:10px}
+    .ph{position:relative;display:block;margin:0 0 12px;break-inside:avoid;overflow:hidden;border:1px solid var(--line);cursor:zoom-in;background:#000}
+    .ph img{width:100%;display:block;transition:transform .5s ease,opacity .4s}
+    .ph:hover img{transform:scale(1.04);opacity:.92}
+    .ph figcaption{position:absolute;left:0;right:0;bottom:0;padding:26px 14px 12px;
+      background:linear-gradient(180deg,transparent,rgba(0,0,0,.75));color:#eee;
+      font-family:'Helvetica Neue',Arial,sans-serif;font-size:12px;letter-spacing:.08em;
+      opacity:0;transform:translateY(8px);transition:all .35s ease}
+    .ph:hover figcaption{opacity:1;transform:none}
+    @media(max-width:900px){.masonry{columns:2}}
+    @media(max-width:560px){.masonry{columns:1}}
+    #lb{position:fixed;inset:0;background:rgba(5,4,3,.96);z-index:100;display:none;align-items:center;justify-content:center;flex-direction:column}
+    #lb.open{display:flex}
+    #lb img{max-width:92vw;max-height:84vh;object-fit:contain;box-shadow:0 20px 60px rgba(0,0,0,.6)}
+    #lb .cap{color:#bbb;font-family:'Helvetica Neue',Arial,sans-serif;font-size:13px;letter-spacing:.1em;margin-top:14px}
+    #lb button{position:absolute;background:none;border:none;color:#888;font-size:34px;cursor:pointer;padding:16px;font-family:Georgia,serif}
+    #lb button:hover{color:var(--accent)}
+    #lb .x{top:10px;right:16px}
+    #lb .prev{left:6px;top:50%;transform:translateY(-50%)}
+    #lb .next{right:6px;top:50%;transform:translateY(-50%)}
+  </style>
   <div class="wrap">
     <h2>Photography</h2>
     <div class="title">Stills</div>
-    <p class="body">Documentary and travel work — the same eye, off set.</p>
-    <div class="grid g2">
-      <img src="assets/photo_ghat.jpg" alt="Night fires on the ghats of Varanasi">
-      <img src="assets/photo_boats.jpg" alt="Boats at dawn, monochrome">
-      <img src="assets/photo_sadhu.jpg" alt="Portrait of a sadhu in warm light">
-      <img src="assets/photo_harvest.jpg" alt="Harvest carrier against Himalayan foothills">
+    <p class="body">Documentary and travel work — the same eye, off set. Shimla, Spiti, Varanasi. Click any frame to view.</p>
+    <div class="masonry" id="gallery">
+      <figure class="ph"><img src="assets/ph_stairs.jpg" alt="Two worlds on a staircase, Shimla" loading="lazy"><figcaption>TWO WORLDS, ONE STAIRCASE — SHIMLA</figcaption></figure>
+      <figure class="ph"><img src="assets/ph_ridge_fog.jpg" alt="The Ridge in fog, Shimla" loading="lazy"><figcaption>THE RIDGE IN FOG — SHIMLA</figcaption></figure>
+      <figure class="ph"><img src="assets/photo_sadhu.jpg" alt="Portrait of a sadhu" loading="lazy"><figcaption>SADHU — VARANASI</figcaption></figure>
+      <figure class="ph"><img src="assets/ph_monks.jpg" alt="Young monks, Spiti" loading="lazy"><figcaption>YOUNG MONKS — SPITI</figcaption></figure>
+      <figure class="ph"><img src="assets/ph_strata.jpg" alt="Light on mountain strata" loading="lazy"><figcaption>LIGHT ON STRATA — SPITI</figcaption></figure>
+      <figure class="ph"><img src="assets/ph_bird.jpg" alt="Bird on a pole" loading="lazy"><figcaption>PERCH</figcaption></figure>
+      <figure class="ph"><img src="assets/photo_ghat.jpg" alt="Night fires on the ghats" loading="lazy"><figcaption>NIGHT FIRES ON THE GHATS — VARANASI</figcaption></figure>
+      <figure class="ph"><img src="assets/ph_buddha.jpg" alt="Buddha silhouette against clouds" loading="lazy"><figcaption>BUDDHA AGAINST THE SKY</figcaption></figure>
+      <figure class="ph"><img src="assets/ph_spiti_valley.jpg" alt="Spiti valley floor" loading="lazy"><figcaption>VALLEY FLOOR — SPITI</figcaption></figure>
+      <figure class="ph"><img src="assets/ph_tent.jpg" alt="Silhouettes through tent canvas" loading="lazy"><figcaption>THROUGH THE CANVAS</figcaption></figure>
+      <figure class="ph"><img src="assets/photo_harvest.jpg" alt="Harvest carrier in the Himalayas" loading="lazy"><figcaption>HARVEST — HIMALAYAS</figcaption></figure>
+      <figure class="ph"><img src="assets/ph_stones.jpg" alt="Stacked river stones" loading="lazy"><figcaption>BALANCE</figcaption></figure>
+      <figure class="ph"><img src="assets/ph_sunset_peak.jpg" alt="Last light on a snow peak" loading="lazy"><figcaption>LAST LIGHT — SPITI</figcaption></figure>
+      <figure class="ph"><img src="assets/ph_mannequin.jpg" alt="Sailor mannequins in a shop window" loading="lazy"><figcaption>SAILORS — SHOP WINDOW</figcaption></figure>
+      <figure class="ph"><img src="assets/photo_boats.jpg" alt="Boats at dawn" loading="lazy"><figcaption>DAWN BOATS — GANGA</figcaption></figure>
+      <figure class="ph"><img src="assets/ph_storm.jpg" alt="Storm over the valley" loading="lazy"><figcaption>STORM OVER THE VALLEY — SPITI</figcaption></figure>
     </div>
   </div>
+  <div id="lb">
+    <button class="x" aria-label="Close">×</button>
+    <button class="prev" aria-label="Previous">‹</button>
+    <img src="" alt="">
+    <div class="cap"></div>
+    <button class="next" aria-label="Next">›</button>
+  </div>
+  <script>
+  (function(){
+    var figs=[].slice.call(document.querySelectorAll('#gallery .ph')),
+        lb=document.getElementById('lb'),
+        im=lb.querySelector('img'), cap=lb.querySelector('.cap'), idx=0;
+    function show(i){idx=(i+figs.length)%figs.length;
+      im.src=figs[idx].querySelector('img').src;
+      cap.textContent=figs[idx].querySelector('figcaption').textContent;
+      lb.classList.add('open');}
+    figs.forEach(function(f,i){f.addEventListener('click',function(){show(i)})});
+    lb.querySelector('.x').onclick=function(){lb.classList.remove('open')};
+    lb.querySelector('.prev').onclick=function(e){e.stopPropagation();show(idx-1)};
+    lb.querySelector('.next').onclick=function(e){e.stopPropagation();show(idx+1)};
+    lb.addEventListener('click',function(e){if(e.target===lb)lb.classList.remove('open')});
+    document.addEventListener('keydown',function(e){
+      if(!lb.classList.contains('open'))return;
+      if(e.key==='Escape')lb.classList.remove('open');
+      if(e.key==='ArrowLeft')show(idx-1);
+      if(e.key==='ArrowRight')show(idx+1);});
+  })();
+  </script>
 </section>
 
 <section>
