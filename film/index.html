@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nandha — Cinematographer &amp; Colorist</title>
+<style>
+  :root{
+    --bg:#0c0b09; --panel:#14120e; --ink:#e8e2d6; --dim:#9c9484;
+    --accent:#c9a15a; --line:#2a261e;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:Georgia,'Times New Roman',serif;line-height:1.65}
+  .sans{font-family:'Helvetica Neue',Helvetica,Arial,sans-serif}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+
+  nav{position:sticky;top:0;z-index:10;background:rgba(12,11,9,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
+  nav .logo{font-size:15px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink)}
+  nav ul{display:flex;gap:26px;list-style:none}
+  nav ul a{font-family:'Helvetica Neue',Arial,sans-serif;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
+  nav ul a:hover{color:var(--accent);text-decoration:none}
+
+  header{position:relative;min-height:88vh;display:flex;align-items:flex-end;
+    background:linear-gradient(180deg,rgba(12,11,9,.25) 0%,rgba(12,11,9,.55) 60%,var(--bg) 100%),
+    url('assets/bab_window.jpg') center/cover no-repeat}
+  header .wrap{padding-bottom:72px}
+  .kicker{font-family:'Helvetica Neue',Arial,sans-serif;font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+  h1{font-size:clamp(44px,7vw,84px);font-weight:400;letter-spacing:.04em;line-height:1.05}
+  .tagline{margin-top:16px;font-size:clamp(16px,2vw,20px);color:var(--dim);font-style:italic;max-width:620px}
+
+  section{padding:88px 0;border-top:1px solid var(--line)}
+  h2{font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);font-family:'Helvetica Neue',Arial,sans-serif;margin-bottom:10px}
+  .title{font-size:clamp(26px,3.4vw,40px);font-weight:400;margin-bottom:6px}
+  .meta{font-family:'Helvetica Neue',Arial,sans-serif;font-size:13px;color:var(--dim);letter-spacing:.06em;margin-bottom:22px}
+  .meta b{color:var(--ink);font-weight:600}
+  p.body{max-width:760px;color:#cfc8ba;margin-bottom:28px}
+
+  .grid{display:grid;gap:10px}
+  .g2{grid-template-columns:1fr 1fr}
+  .g3{grid-template-columns:repeat(3,1fr)}
+  .grid img{width:100%;height:100%;object-fit:cover;display:block;border:1px solid var(--line);transition:opacity .25s}
+  .grid img:hover{opacity:.85}
+  .full{grid-column:1/-1}
+
+  .btns{margin-top:26px;display:flex;gap:14px;flex-wrap:wrap}
+  .btn{font-family:'Helvetica Neue',Arial,sans-serif;font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+    padding:12px 22px;border:1px solid var(--accent);color:var(--accent)}
+  .btn:hover{background:var(--accent);color:var(--bg);text-decoration:none}
+
+  .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin-top:8px}
+  .skill{background:var(--panel);border:1px solid var(--line);padding:22px}
+  .skill h3{font-family:'Helvetica Neue',Arial,sans-serif;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);margin-bottom:8px}
+  .skill p{font-size:14px;color:var(--dim)}
+
+  footer{border-top:1px solid var(--line);padding:70px 0;text-align:center}
+  footer .email{font-size:clamp(20px,3vw,30px)}
+  footer p{color:var(--dim);font-size:14px;margin-top:10px}
+
+  @media(max-width:720px){.g2,.g3{grid-template-columns:1fr}nav ul{gap:14px}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <span class="logo">NANDHA</span>
+    <ul>
+      <li><a href="#bab">Feature</a></li>
+      <li><a href="#pilot">Pilot</a></li>
+      <li><a href="#development">In Development</a></li>
+      <li><a href="#stills">Stills</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="../">AI / VFX →</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header>
+  <div class="wrap">
+    <div class="kicker">Cinematographer &nbsp;·&nbsp; Colorist</div>
+    <h1>Nandha</h1>
+    <p class="tagline">Painting with available light — chiaroscuro-driven cinematography and color for Tamil cinema.</p>
+  </div>
+</header>
+
+<section id="bab">
+  <div class="wrap">
+    <h2>Feature Film · Theatrical Release</h2>
+    <div class="title">Bayamariya Brammai (2024)</div>
+    <div class="meta"><b>Director of Photography</b> · Dir. Rahul Kabali · Starring JD, Guru Somasundaram · Crime / Drama · Released 21 June 2024</div>
+    <p class="body">An assassin and a writer collide in a moral duel that rekindles the artist in one and the humanity in the other. The visual language draws on Rembrandt — single-source key light, deep shadow, faces carved out of darkness. Shot for theatrical release and OTT, graded in DaVinci Resolve.</p>
+    <div class="grid g2">
+      <img class="full" src="assets/bab_poster.jpg" alt="Bayamariya Brammai first look poster">
+      <img src="assets/bab_desk.jpg" alt="Writer at his desk, tungsten practicals">
+      <img src="assets/bab_cafe.jpg" alt="Café scene, naturalistic daylight">
+      <img src="assets/bab_eye.jpg" alt="Extreme close-up, single catchlight">
+      <img src="assets/bab_jail.jpg" alt="Jail cell, barred light">
+      <img src="assets/bab_mirror.jpg" alt="Mirror frame-within-frame composition">
+      <img src="assets/bab_alley.jpg" alt="Night alley under a single practical">
+    </div>
+    <div class="btns">
+      <a class="btn" href="https://www.youtube.com/watch?v=xlKE0kcwTkw" target="_blank">Watch Trailer</a>
+      <a class="btn" href="https://www.youtube.com/watch?v=0GR9LwfjgJk" target="_blank">Watch Teaser</a>
+      <a class="btn" href="https://www.imdb.com/title/tt32591988/" target="_blank">IMDb</a>
+    </div>
+  </div>
+</section>
+
+<section id="pilot">
+  <div class="wrap">
+    <h2>Pilot Film</h2>
+    <div class="title">Narumugaiyae</div>
+    <div class="meta"><b>Cinematographer</b> · Producer's Cut · 4K</div>
+    <p class="body">A pilot film shot on location — lake work from a crane rig over open water, choreographed fight sequences, and an end-to-end 4K finishing pipeline from location scout to producer's cut.</p>
+    <div class="grid g3">
+      <img src="assets/pilot_crane.jpg" alt="Operating camera on crane rig over water">
+      <img src="assets/pilot_team.jpg" alt="On location with core team">
+      <img src="assets/pilot_crew.jpg" alt="Full crew photo with camera">
+    </div>
+  </div>
+</section>
+
+<section id="development">
+  <div class="wrap">
+    <h2>In Development</h2>
+    <div class="title">Sanda Seivom</div>
+    <div class="meta"><b>Cinematographer / Color Design</b> · Pre-production</div>
+    <p class="body">A combat-sport drama set in Kannagi Nagar, Chennai — where a community's game becomes its weapon against a corrupted power. Currently in pre-production: script (draft 3 with scene breakdown), full color palette design, custom LUTs, shot grammar, and equipment planning.</p>
+    <div class="grid g2">
+      <img src="assets/ss_colorref.jpg" alt="Sanda Seivom color reference">
+      <img src="assets/ss_triad.jpg" alt="Graffiti triad color palette">
+    </div>
+    <p class="body" style="margin-top:40px"><span style="color:var(--ink);font-size:22px">The Last Offering</span><br>
+    A mist-shrouded mountain-village tale, written by Rahul Kabali — attached as cinematographer. Screenplay complete.</p>
+  </div>
+</section>
+
+<section id="stills">
+  <div class="wrap">
+    <h2>Photography</h2>
+    <div class="title">Stills</div>
+    <p class="body">Documentary and travel work — the same eye, off set.</p>
+    <div class="grid g2">
+      <img src="assets/photo_ghat.jpg" alt="Night fires on the ghats of Varanasi">
+      <img src="assets/photo_boats.jpg" alt="Boats at dawn, monochrome">
+      <img src="assets/photo_sadhu.jpg" alt="Portrait of a sadhu in warm light">
+      <img src="assets/photo_harvest.jpg" alt="Harvest carrier against Himalayan foothills">
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Craft</h2>
+    <div class="title">What I Bring</div>
+    <div class="skills">
+      <div class="skill"><h3>Cinematography</h3><p>Feature, pilot and short-form. Crane, handheld and rigged work. Shot design built on classical painting and camera-angle grammar.</p></div>
+      <div class="skill"><h3>Color &amp; DI</h3><p>DaVinci Resolve grading, custom LUT development, EXR/ACES pipelines, OTT and theatrical deliverables.</p></div>
+      <div class="skill"><h3>Pre-production</h3><p>Palette and reference decks, location scouting, equipment lists, fight-choreo previz, scene breakdowns.</p></div>
+      <div class="skill"><h3>Edit &amp; Finish</h3><p>Trailer and reel cutting, VFX comp handling, delivery masters from teaser to full OTT package.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <h2>Contact</h2>
+    <a class="email" href="mailto:smnanda23@gmail.com">smnanda23@gmail.com</a>
+    <p>Chennai · Available for features, pilots, and commercial work</p>
+  </div>
+</footer>
+
+</body>
+</html>

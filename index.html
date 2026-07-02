@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nanda Kumar — Generative AI Engineer · Production VFX-AI</title>
+<style>
+  :root{
+    --bg:#0a0d12; --panel:#10151d; --panel2:#151b25; --ink:#dfe6ee; --dim:#8a94a3;
+    --accent:#4fd1c5; --accent2:#7aa2f7; --line:#1e2732; --mono:'SF Mono',Menlo,Consolas,monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;line-height:1.65}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  .mono{font-family:var(--mono)}
+
+  nav{position:sticky;top:0;z-index:10;background:rgba(10,13,18,.93);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:54px}
+  nav .logo{font-family:var(--mono);font-size:14px;color:var(--ink)}
+  nav .logo span{color:var(--accent)}
+  nav ul{display:flex;gap:22px;list-style:none}
+  nav ul a{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
+  nav ul a:hover{color:var(--accent);text-decoration:none}
+
+  header{padding:110px 0 80px;border-bottom:1px solid var(--line);
+    background:radial-gradient(ellipse 900px 420px at 75% 0%,rgba(79,209,197,.07),transparent)}
+  .kicker{font-family:var(--mono);font-size:13px;color:var(--accent);margin-bottom:16px}
+  h1{font-size:clamp(38px,6vw,64px);font-weight:700;letter-spacing:-.02em;line-height:1.08}
+  .sub{margin-top:14px;font-size:clamp(16px,2vw,20px);color:var(--dim);max-width:720px}
+  .sub b{color:var(--ink);font-weight:600}
+  .chips{margin-top:28px;display:flex;flex-wrap:wrap;gap:8px}
+  .chip{font-family:var(--mono);font-size:12px;color:var(--accent2);background:var(--panel);border:1px solid var(--line);padding:6px 12px;border-radius:4px}
+
+  section{padding:80px 0;border-bottom:1px solid var(--line)}
+  h2{font-family:var(--mono);font-size:13px;color:var(--accent);margin-bottom:8px}
+  h2::before{content:"// "}
+  .title{font-size:clamp(24px,3.2vw,36px);font-weight:700;letter-spacing:-.01em;margin-bottom:8px}
+  .meta{font-family:var(--mono);font-size:12.5px;color:var(--dim);margin-bottom:20px}
+  p.body{max-width:760px;color:#b9c2ce;margin-bottom:20px}
+
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:26px;transition:border-color .2s}
+  .card:hover{border-color:var(--accent)}
+  .card h3{font-size:18px;margin-bottom:4px}
+  .card .tag{font-family:var(--mono);font-size:11.5px;color:var(--accent2);margin-bottom:12px}
+  .card p{font-size:14.5px;color:var(--dim)}
+  .card .stack{margin-top:14px;font-family:var(--mono);font-size:11.5px;color:#5f6b7a}
+  .card a.gh{display:inline-block;margin-top:12px;font-family:var(--mono);font-size:12.5px}
+
+  .figrow{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:26px 0 6px}
+  figure{background:var(--panel);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+  figure img{width:100%;display:block}
+  figcaption{font-family:var(--mono);font-size:11.5px;color:var(--dim);padding:10px 14px}
+
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:24px}
+  .grid3 img{width:100%;height:100%;object-fit:cover;border:1px solid var(--line);border-radius:6px}
+
+  .timeline{margin-top:10px;border-left:2px solid var(--line);padding-left:28px}
+  .tl{position:relative;padding-bottom:34px}
+  .tl:last-child{padding-bottom:0}
+  .tl::before{content:"";position:absolute;left:-35px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--accent)}
+  .tl .when{font-family:var(--mono);font-size:12px;color:var(--accent)}
+  .tl h3{font-size:17px;margin:4px 0 4px}
+  .tl p{font-size:14.5px;color:var(--dim);max-width:700px}
+
+  footer{padding:70px 0;text-align:center}
+  footer .email{font-size:clamp(20px,3vw,28px);font-weight:600}
+  footer .links{margin-top:16px;display:flex;justify-content:center;gap:22px;font-family:var(--mono);font-size:13px}
+  footer p{color:var(--dim);font-size:13.5px;margin-top:14px}
+
+  @media(max-width:720px){.cards,.figrow{grid-template-columns:1fr}.grid3{grid-template-columns:1fr}nav ul{gap:12px}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <span class="logo">nanda<span>@</span>genai-vfx</span>
+    <ul>
+      <li><a href="#work">AI Work</a></li>
+      <li><a href="#roto">VFX-AI</a></li>
+      <li><a href="#film">Film</a></li>
+      <li><a href="#path">Path</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header>
+  <div class="wrap">
+    <div class="kicker">Generative AI Engineer · Computer Vision &amp; Diffusion Models · Production VFX-AI</div>
+    <h1>Nanda Kumar</h1>
+    <p class="sub">I build <b>production GenAI pipelines for feature films</b> — diffusion, segmentation, and color-managed media systems — grounded in 8 years as a working <b>Director of Photography</b>. I know what film-grade output looks like because I've shot and graded it.</p>
+    <div class="chips">
+      <span class="chip">Stable Diffusion / SDXL</span><span class="chip">ControlNet</span><span class="chip">ComfyUI</span>
+      <span class="chip">SAM2</span><span class="chip">PyTorch</span><span class="chip">LoRA / fine-tuning</span>
+      <span class="chip">TensorRT</span><span class="chip">CUDA</span><span class="chip">FastAPI / Docker</span>
+    </div>
+  </div>
+</header>
+
+<section id="work">
+  <div class="wrap">
+    <h2>generative_ai</h2>
+    <div class="title">Key AI Projects</div>
+    <div class="meta">Founder &amp; CTO — Neural Engine Technology Pvt. Ltd. · Feb 2025–Present · research → production</div>
+    <div class="cards">
+      <div class="card">
+        <h3>AI-VFX Production Pipeline</h3>
+        <div class="tag">diffusion · live feature-film post</div>
+        <p>End-to-end Stable Diffusion + ControlNet + ComfyUI pipeline shipped into live feature-film post-production. Custom ControlNet conditioning preserves shot geometry across frames — replacing hours of manual cleanup per shot.</p>
+        <div class="stack">SD/SDXL · ControlNet · ComfyUI · LoRA · quantisation · CUDA</div>
+      </div>
+      <div class="card">
+        <h3>Intelligent Rotoscoping</h3>
+        <div class="tag">computer vision · SAM2 + temporal consistency</div>
+        <p>Model-driven segmentation module producing film-grade mattes with temporal-consistency smoothing — eliminating multi-hour manual roto from the pipeline at a fraction of the per-shot time.</p>
+        <div class="stack">SAM2 · optical flow · OpenCV · PyTorch</div>
+      </div>
+      <div class="card">
+        <h3>UNIRAW — RAW Compression &amp; Intelligence Engine</h3>
+        <div class="tag">founder / lead engineer · open source</div>
+        <p>Privacy-first RAW archival: compresses NEF/DNG masters ~20–50× (12&nbsp;MB → 0.7&nbsp;MB) while reconstructing editable, chemically accurate DNGs that Lightroom/Photoshop read as native RAW. Fully offline VLM auto-annotation (Ollama — LLaVA / Qwen-VL).</p>
+        <div class="stack">float lightmap norm · K-means VQ · residual encoding · LZMA · React/Vite · FastAPI</div>
+        <a class="gh" href="https://github.com/smnanda23/uniraw" target="_blank">github.com/smnanda23/uniraw →</a>
+      </div>
+      <div class="card">
+        <h3>Generative Look-Development Tool</h3>
+        <div class="tag">diffusion · pre-production</div>
+        <p>Stable Diffusion–based concept-art generator letting directors and DPs iterate on visual references in minutes rather than days — built by someone who has sat on both sides of that conversation.</p>
+        <div class="stack">SD · ComfyUI · prompt/LoRA tooling</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="roto">
+  <div class="wrap">
+    <h2>pipeline_in_action</h2>
+    <div class="title">From Plate to Matte</div>
+    <p class="body">Real working material from the pipeline: ACES/linear EXR plates ingested with lens and camera metadata (chart in frame for color management), segmented by the SAM2 + temporal-consistency module into clean, film-grade mattes — per frame, no manual roto.</p>
+    <div class="figrow">
+      <figure><img src="assets/exr_plate.jpg" alt="Linear EXR source plate with color chart"><figcaption>source_plate.exr — linear light, color chart in frame, camera metadata JSON sidecar</figcaption></figure>
+      <figure><img src="assets/sam2_matte.jpg" alt="SAM2 segmentation matte of a subject"><figcaption>matte_00086412.exr — SAM2 segmentation + temporal smoothing, one of 25-frame sequence</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="film">
+  <div class="wrap">
+    <h2>film_credentials</h2>
+    <div class="title">The DP Behind the Engineer</div>
+    <div class="meta">Director of Photography — sixtyninemm Films · 2017–2025 · feature &amp; short films</div>
+    <p class="body">Cinematographer on the 2024 Tamil theatrical feature <b style="color:var(--ink)">Bayamariya Brammai</b> (dir. Rahul Kabali) — owned the full visual language from lensing and lighting through on-set color management to the final grade. This is the practitioner-level color science and image-quality judgment behind every pipeline above.</p>
+    <div class="grid3">
+      <img src="assets/bab_window.jpg" alt="Bayamariya Brammai — window light frame">
+      <img src="assets/bab_desk.jpg" alt="Bayamariya Brammai — tungsten desk scene">
+      <img src="assets/bab_eye.jpg" alt="Bayamariya Brammai — extreme close-up">
+    </div>
+    <p class="body" style="margin-top:18px">
+      <a href="https://www.youtube.com/watch?v=xlKE0kcwTkw" target="_blank">Trailer →</a> &nbsp;·&nbsp;
+      <a href="https://www.imdb.com/title/tt32591988/" target="_blank">IMDb →</a> &nbsp;·&nbsp;
+      <a href="film/">Full film portfolio →</a>
+    </p>
+  </div>
+</section>
+
+<section id="path">
+  <div class="wrap">
+    <h2>career_path</h2>
+    <div class="title">12+ Years, One Technical Thread</div>
+    <div class="timeline" style="margin-top:30px">
+      <div class="tl">
+        <div class="when">2025 — present</div>
+        <h3>Founder &amp; CTO · Neural Engine Technology</h3>
+        <p>AI-VFX venture. Shipped the entire GenAI pipeline — technical vision, founding-team hiring, ML research to production deployment for live feature-film work.</p>
+      </div>
+      <div class="tl">
+        <div class="when">2017 — 2025</div>
+        <h3>Director of Photography · sixtyninemm Films</h3>
+        <p>Feature and short films, including a 2024 theatrical release. Look development, on-set color management, final grade.</p>
+      </div>
+      <div class="tl">
+        <div class="when">2014 — 2017</div>
+        <h3>Member of Technical Staff, DevOps · Zoho Corporation</h3>
+        <p>Production deployments and release rollouts for one of India's largest SaaS suites (10M+ users). Server provisioning, monitoring, grid operations.</p>
+      </div>
+      <div class="tl">
+        <div class="when">foundation</div>
+        <h3>B.E. Computer Science</h3>
+        <p>Sri Muthukumaran Institute of Technology, Chennai · DeepLearning.AI Generative AI Specialisation · OUTSKILL GenAI &amp; AI Engineering Mastermind</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <h2 style="text-align:center">contact</h2>
+    <a class="email" href="mailto:smnanda23@gmail.com">smnanda23@gmail.com</a>
+    <div class="links">
+      <a href="https://linkedin.com/in/sm-nanda-kumar" target="_blank">linkedin/sm-nanda-kumar</a>
+      <a href="https://github.com/smnanda23" target="_blank">github/smnanda23</a>
+      <a href="tel:+919952054734">+91 99520 54734</a>
+    </div>
+    <p>Chennai, India · Production GenAI for film &amp; media</p>
+  </div>
+</footer>
+
+</body>
+</html>
