@@ -4,86 +4,153 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nandha — Cinematographer &amp; Colorist</title>
+<meta name="description" content="Nandha — Director of Photography and colorist for Tamil cinema. Bayamariya Brammai (2024), Narumugaiyae, Sanda Seivom.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#0c0b09; --panel:#14120e; --ink:#e8e2d6; --dim:#9c9484;
-    --accent:#c9a15a; --line:#2a261e;
+    --bg:#0a0908; --bg2:#0e0c0a; --ink:#ece7db; --dim:#9c9484; --faint:#6b6455;
+    --gold:#c9a15a; --gold2:#e0bd7e; --line:rgba(201,161,90,.14); --line2:rgba(255,255,255,.09);
+    --serif:'Cormorant Garamond',Georgia,serif; --sans:Inter,-apple-system,sans-serif;
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{background:var(--bg);color:var(--ink);font-family:Georgia,'Times New Roman',serif;line-height:1.65}
-  .sans{font-family:'Helvetica Neue',Helvetica,Arial,sans-serif}
-  a{color:var(--accent);text-decoration:none}
-  a:hover{text-decoration:underline}
-  .wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.7;overflow-x:hidden}
+  ::selection{background:rgba(201,161,90,.3)}
+  a{color:var(--gold);text-decoration:none}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 28px}
 
-  nav{position:sticky;top:0;z-index:10;background:rgba(12,11,9,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
-  nav .logo{font-size:15px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink)}
-  nav ul{display:flex;gap:26px;list-style:none}
-  nav ul a{font-family:'Helvetica Neue',Arial,sans-serif;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
-  nav ul a:hover{color:var(--accent);text-decoration:none}
+  /* nav */
+  nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:.3s;border-bottom:1px solid transparent}
+  nav.scrolled{background:rgba(10,9,8,.78);backdrop-filter:blur(16px);border-color:var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:66px}
+  nav .logo{font-family:var(--serif);font-size:21px;letter-spacing:.3em;text-transform:uppercase}
+  nav ul{display:flex;gap:4px;list-style:none;align-items:center}
+  nav ul a{font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);padding:8px 13px;border-radius:6px;transition:.2s}
+  nav ul a:hover{color:var(--gold2)}
+  nav ul a.cta{border:1px solid rgba(201,161,90,.45);color:var(--gold)}
+  nav ul a.cta:hover{background:var(--gold);color:var(--bg)}
 
-  header{position:relative;min-height:88vh;display:flex;align-items:flex-end;overflow:hidden;
+  /* hero */
+  header{position:relative;min-height:100vh;display:flex;align-items:flex-end;overflow:hidden;
     background:
-      radial-gradient(ellipse 900px 620px at 82% 18%, rgba(201,161,90,.16), transparent 62%),
-      radial-gradient(ellipse 700px 460px at 12% 85%, rgba(90,110,140,.08), transparent 65%),
-      linear-gradient(160deg,#12100c 0%,#0c0b09 55%,#0a0908 100%)}
+      radial-gradient(ellipse 1000px 640px at 82% 14%, rgba(201,161,90,.15), transparent 62%),
+      radial-gradient(ellipse 720px 480px at 8% 88%, rgba(80,100,130,.07), transparent 65%),
+      linear-gradient(165deg,#141109 0%,#0a0908 55%,#080706 100%)}
   header::before{content:"";position:absolute;inset:0;pointer-events:none;
     background:linear-gradient(115deg,transparent 55%,rgba(201,161,90,.05) 62%,transparent 72%)}
-  header::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.35;
+  header::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.4;
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E")}
-  .frameline{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(201,161,90,.35),transparent);pointer-events:none}
+  .frameline{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(201,161,90,.4),transparent);pointer-events:none}
   .frameline.top{top:11%}
   .frameline.bottom{bottom:9%}
-  header .wrap{padding-bottom:72px;position:relative;z-index:2}
-  .kicker{font-family:'Helvetica Neue',Arial,sans-serif;font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
-  h1{font-size:clamp(44px,7vw,84px);font-weight:400;letter-spacing:.04em;line-height:1.05}
-  .tagline{margin-top:16px;font-size:clamp(16px,2vw,20px);color:var(--dim);font-style:italic;max-width:620px}
+  header .wrap{position:relative;z-index:2;padding-bottom:100px}
+  .kicker{font-size:12px;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;font-weight:500}
+  h1{font-family:var(--serif);font-size:clamp(64px,11vw,150px);font-weight:500;letter-spacing:.02em;line-height:.95}
+  .tagline{margin-top:24px;font-family:var(--serif);font-style:italic;font-size:clamp(18px,2.4vw,26px);color:var(--dim);max-width:640px;font-weight:400}
+  .heroctas{margin-top:40px;display:flex;gap:14px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+    padding:14px 28px;border:1px solid rgba(201,161,90,.5);color:var(--gold);transition:.25s}
+  .btn:hover{background:var(--gold);color:var(--bg)}
+  .btn.solid{background:var(--gold);color:var(--bg)}
+  .btn.solid:hover{background:var(--gold2)}
+  .scrollhint{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);color:var(--faint);font-size:11px;letter-spacing:.3em;text-transform:uppercase;animation:bob 2.4s ease-in-out infinite}
+  @keyframes bob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,8px)}}
 
-  section{padding:88px 0;border-top:1px solid var(--line)}
-  h2{font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);font-family:'Helvetica Neue',Arial,sans-serif;margin-bottom:10px}
-  .title{font-size:clamp(26px,3.4vw,40px);font-weight:400;margin-bottom:6px}
-  .meta{font-family:'Helvetica Neue',Arial,sans-serif;font-size:13px;color:var(--dim);letter-spacing:.06em;margin-bottom:22px}
+  /* sections */
+  section{padding:120px 0}
+  section+section{border-top:1px solid var(--line)}
+  .eyebrow{font-size:12px;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;font-weight:500}
+  h2.big{font-family:var(--serif);font-size:clamp(38px,5vw,64px);font-weight:500;line-height:1.05;margin-bottom:12px}
+  .meta{font-size:13px;color:var(--dim);letter-spacing:.05em;margin-bottom:24px}
   .meta b{color:var(--ink);font-weight:600}
-  p.body{max-width:760px;color:#cfc8ba;margin-bottom:28px}
+  p.body{max-width:760px;color:#c9c2b2;margin-bottom:36px;font-size:16.5px}
 
-  .grid{display:grid;gap:10px}
+  .rv{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
+  .rv.in{opacity:1;transform:none}
+
+  /* grids */
+  .grid{display:grid;gap:12px}
   .g2{grid-template-columns:1fr 1fr}
   .g3{grid-template-columns:repeat(3,1fr)}
-  .grid img{width:100%;height:100%;object-fit:cover;display:block;border:1px solid var(--line);transition:opacity .25s}
-  .grid img:hover{opacity:.85}
+  .grid img{width:100%;height:100%;object-fit:cover;display:block;border:1px solid var(--line2);transition:transform .5s ease,filter .5s}
+  .grid img:hover{transform:scale(1.02);filter:brightness(1.08)}
   .full{grid-column:1/-1}
 
-  .btns{margin-top:26px;display:flex;gap:14px;flex-wrap:wrap}
-  .btn{font-family:'Helvetica Neue',Arial,sans-serif;font-size:12px;letter-spacing:.16em;text-transform:uppercase;
-    padding:12px 22px;border:1px solid var(--accent);color:var(--accent)}
-  .btn:hover{background:var(--accent);color:var(--bg);text-decoration:none}
+  /* full-bleed strip */
+  .bleed{margin:56px 0;position:relative}
+  .bleed img{width:100%;max-height:66vh;object-fit:cover;display:block}
+  .bleed .cap{position:absolute;bottom:18px;left:24px;font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:rgba(236,231,219,.75);
+    background:rgba(10,9,8,.55);backdrop-filter:blur(6px);padding:8px 14px}
 
-  .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin-top:8px}
-  .skill{background:var(--panel);border:1px solid var(--line);padding:22px}
-  .skill h3{font-family:'Helvetica Neue',Arial,sans-serif;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);margin-bottom:8px}
-  .skill p{font-size:14px;color:var(--dim)}
+  /* color design steps */
+  .step{display:grid;grid-template-columns:200px 1fr;gap:30px;margin-top:52px;align-items:start}
+  .step .no{position:sticky;top:86px;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
+  .step .no b{display:block;font-family:var(--serif);font-size:44px;color:var(--ink);font-weight:400;line-height:1;margin-bottom:6px}
+  .step p{color:var(--dim);font-size:15px;max-width:640px;margin-bottom:18px}
+  .swatches{display:flex;height:92px;border:1px solid var(--line2);margin-bottom:18px}
+  .swatches div{flex:1;position:relative;transition:flex .3s}
+  .swatches div:hover{flex:1.6}
+  .swatches span{position:absolute;bottom:8px;left:10px;font-size:10.5px;letter-spacing:.08em;color:rgba(0,0,0,.55);font-weight:600}
 
-  footer{border-top:1px solid var(--line);padding:70px 0;text-align:center}
-  footer .email{font-size:clamp(20px,3vw,30px)}
-  footer p{color:var(--dim);font-size:14px;margin-top:10px}
+  /* gallery */
+  .filters{display:flex;gap:10px;margin-bottom:26px;flex-wrap:wrap}
+  .fbtn{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);border:1px solid var(--line2);padding:9px 18px;cursor:pointer;background:none;transition:.2s;font-family:var(--sans)}
+  .fbtn:hover{color:var(--gold)}
+  .fbtn.on{background:var(--gold);border-color:var(--gold);color:var(--bg);font-weight:600}
+  .masonry{columns:3;column-gap:12px}
+  .ph{position:relative;display:block;margin:0 0 12px;break-inside:avoid;overflow:hidden;border:1px solid var(--line2);cursor:zoom-in;background:#000}
+  .ph img{width:100%;display:block;transition:transform .5s ease,opacity .4s}
+  .ph:hover img{transform:scale(1.045);opacity:.9}
+  .ph figcaption{position:absolute;left:0;right:0;bottom:0;padding:28px 14px 12px;
+    background:linear-gradient(180deg,transparent,rgba(0,0,0,.8));color:#eee;
+    font-size:11px;letter-spacing:.14em;opacity:0;transform:translateY(8px);transition:all .35s ease}
+  .ph:hover figcaption{opacity:1;transform:none}
+  .ph.hide{display:none}
+  @media(max-width:900px){.masonry{columns:2}}
+  @media(max-width:560px){.masonry{columns:1}}
 
-  @media(max-width:720px){.g2,.g3{grid-template-columns:1fr}nav ul{gap:14px}}
+  /* lightbox */
+  #lb{position:fixed;inset:0;background:rgba(6,5,4,.97);z-index:100;display:none;align-items:center;justify-content:center;flex-direction:column}
+  #lb.open{display:flex}
+  #lb img{max-width:92vw;max-height:84vh;object-fit:contain;box-shadow:0 24px 80px rgba(0,0,0,.7)}
+  #lb .cap{color:#b5ac99;font-size:12px;letter-spacing:.18em;text-transform:uppercase;margin-top:16px}
+  #lb button{position:absolute;background:none;border:none;color:#7d7566;font-size:36px;cursor:pointer;padding:16px;font-family:var(--serif);transition:.2s}
+  #lb button:hover{color:var(--gold)}
+  #lb .x{top:10px;right:16px}
+  #lb .prev{left:8px;top:50%;transform:translateY(-50%)}
+  #lb .next{right:8px;top:50%;transform:translateY(-50%)}
+
+  /* footer */
+  footer{border-top:1px solid var(--line);padding:110px 0 60px;text-align:center;position:relative;overflow:hidden}
+  footer::before{content:"";position:absolute;left:50%;top:-180px;transform:translateX(-50%);width:760px;height:340px;
+    background:radial-gradient(ellipse,rgba(201,161,90,.12),transparent 70%);pointer-events:none}
+  footer h2{font-family:var(--serif);font-size:clamp(36px,5.4vw,64px);font-weight:500;position:relative}
+  footer .email{display:inline-block;margin-top:24px;font-size:clamp(17px,2.4vw,24px);color:var(--ink);border-bottom:1px solid var(--gold);padding-bottom:4px;transition:.2s;position:relative}
+  footer .email:hover{color:var(--gold)}
+  footer .soc{margin-top:34px;display:flex;justify-content:center;gap:22px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;position:relative}
+  footer .fine{margin-top:56px;color:var(--faint);font-size:12.5px;position:relative}
+
+  @media(max-width:860px){
+    .g2,.g3{grid-template-columns:1fr}
+    .step{grid-template-columns:1fr;gap:12px}.step .no{position:static}
+    nav ul li.hidem{display:none}
+  }
 </style>
 </head>
 <body>
 
-<nav>
+<nav id="nav">
   <div class="wrap">
-    <span class="logo">NANDHA</span>
+    <span class="logo">Nandha</span>
     <ul>
-      <li><a href="#bab">Feature</a></li>
-      <li><a href="#pilot">Pilot</a></li>
-      <li><a href="#development">In Development</a></li>
-      <li><a href="#stills">Stills</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="../">AI / VFX →</a></li>
+      <li class="hidem"><a href="#bab">Feature</a></li>
+      <li class="hidem"><a href="#pilot">Pilot</a></li>
+      <li class="hidem"><a href="#development">Color Design</a></li>
+      <li class="hidem"><a href="#stills">Stills</a></li>
+      <li><a href="../">AI / VFX ↗</a></li>
+      <li><a class="cta" href="#contact">Contact</a></li>
     </ul>
   </div>
 </nav>
@@ -92,87 +159,88 @@
   <div class="frameline top"></div>
   <div class="frameline bottom"></div>
   <div class="wrap">
-    <div class="kicker">Cinematographer &nbsp;·&nbsp; Colorist</div>
+    <div class="kicker">Cinematographer · Colorist · Chennai</div>
     <h1>Nandha</h1>
     <p class="tagline">Painting with available light — chiaroscuro-driven cinematography and color for Tamil cinema.</p>
+    <div class="heroctas">
+      <a class="btn solid" href="#bab">Feature Film</a>
+      <a class="btn" href="https://www.youtube.com/watch?v=xlKE0kcwTkw" target="_blank" rel="noopener">▶ Showreel / Trailer</a>
+    </div>
   </div>
+  <div class="scrollhint">Scroll</div>
 </header>
 
 <section id="bab">
   <div class="wrap">
-    <h2>Feature Film · Theatrical Release</h2>
-    <div class="title">Bayamariya Brammai (2024)</div>
-    <div class="meta"><b>Director of Photography</b> · Dir. Rahul Kabali · Starring JD, Guru Somasundaram · Crime / Drama · Released 21 June 2024</div>
-    <p class="body">An assassin and a writer collide in a moral duel that rekindles the artist in one and the humanity in the other. The visual language draws on Rembrandt — single-source key light, deep shadow, faces carved out of darkness. Shot for theatrical release and OTT, graded in DaVinci Resolve.</p>
-    <div class="grid g2">
-      <img class="full" src="assets/bab_poster.jpg" alt="Bayamariya Brammai first look poster">
-      <img src="assets/bab_desk.jpg" alt="Writer at his desk, tungsten practicals">
-      <img src="assets/bab_cafe.jpg" alt="Café scene, naturalistic daylight">
-      <img src="assets/bab_eye.jpg" alt="Extreme close-up, single catchlight">
-      <img src="assets/bab_jail.jpg" alt="Jail cell, barred light">
-      <img src="assets/bab_mirror.jpg" alt="Mirror frame-within-frame composition">
-      <img src="assets/bab_alley.jpg" alt="Night alley under a single practical">
+    <div class="eyebrow rv">Feature Film · Theatrical Release</div>
+    <h2 class="big rv">Bayamariya Brammai <span style="color:var(--dim);font-size:.6em">(2024)</span></h2>
+    <div class="meta rv"><b>Director of Photography</b> · Dir. Rahul Kabali · Starring JD, Guru Somasundaram · Crime / Drama · Released 21 June 2024</div>
+    <p class="body rv">An assassin and a writer collide in a moral duel that rekindles the artist in one and the humanity in the other. The visual language draws on Rembrandt — single-source key light, deep shadow, faces carved out of darkness. Shot for theatrical release and OTT, graded in DaVinci Resolve.</p>
+  </div>
+  <div class="bleed rv">
+    <img src="assets/bab_poster.jpg" alt="Bayamariya Brammai first look poster">
+    <div class="cap">First look · Bayamariya Brammai</div>
+  </div>
+  <div class="wrap">
+    <div class="grid g3 rv">
+      <img src="assets/bab_desk.jpg" alt="Writer at his desk, tungsten practicals" loading="lazy">
+      <img src="assets/bab_cafe.jpg" alt="Café scene, naturalistic daylight" loading="lazy">
+      <img src="assets/bab_eye.jpg" alt="Extreme close-up, single catchlight" loading="lazy">
+      <img src="assets/bab_jail.jpg" alt="Jail cell, barred light" loading="lazy">
+      <img src="assets/bab_mirror.jpg" alt="Mirror frame-within-frame composition" loading="lazy">
+      <img src="assets/bab_alley.jpg" alt="Night alley under a single practical" loading="lazy">
     </div>
-    <div class="btns">
-      <a class="btn" href="https://www.youtube.com/watch?v=xlKE0kcwTkw" target="_blank">Watch Trailer</a>
-      <a class="btn" href="https://www.youtube.com/watch?v=0GR9LwfjgJk" target="_blank">Watch Teaser</a>
-      <a class="btn" href="https://www.imdb.com/title/tt32591988/" target="_blank">IMDb</a>
+    <div class="heroctas rv" style="margin-top:34px">
+      <a class="btn" href="https://www.youtube.com/watch?v=xlKE0kcwTkw" target="_blank" rel="noopener">▶ Trailer</a>
+      <a class="btn" href="https://www.youtube.com/watch?v=0GR9LwfjgJk" target="_blank" rel="noopener">Teaser</a>
+      <a class="btn" href="https://www.imdb.com/title/tt32591988/" target="_blank" rel="noopener">IMDb</a>
     </div>
   </div>
 </section>
 
 <section id="pilot">
   <div class="wrap">
-    <h2>Pilot Film</h2>
-    <div class="title">Narumugaiyae</div>
-    <div class="meta"><b>Cinematographer</b> · Producer's Cut · 4K</div>
-    <p class="body">A pilot film shot on location — lake work from a crane rig over open water, choreographed fight sequences, and an end-to-end 4K finishing pipeline from location scout to producer's cut.</p>
-    <div class="grid g3">
-      <img src="assets/nm_swordeyes.jpg" alt="Warrior sighting along his blade">
-      <img src="assets/nm_curvedsword.jpg" alt="Warrior with curved sword, close-up">
-      <img src="assets/nm_grapple.jpg" alt="Duel locked at the lakeshore">
-      <img src="assets/nm_goldenwide.jpg" alt="Arrows in flight, golden hour wide">
-      <img src="assets/nm_horsemeet.jpg" alt="Rider meets archer by the water">
-      <img src="assets/nm_archer.jpg" alt="Archer in traditional dress, warm grade">
-      <img src="assets/nm_aerial.jpg" alt="Aerial of misty lakeshore, figures in flight">
-      <img src="assets/nm_archercloseup.jpg" alt="Archer close-up with bow, golden light">
-      <img src="assets/nm_topdown.jpg" alt="Top-down drone shot of the lakeshore duel">
+    <div class="eyebrow rv">Pilot Film</div>
+    <h2 class="big rv">Narumugaiyae</h2>
+    <div class="meta rv"><b>Cinematographer</b> · Producer's Cut · 4K</div>
+    <p class="body rv">A pilot film shot on location — lake work from a crane rig over open water, choreographed fight sequences, and an end-to-end 4K finishing pipeline from location scout to producer's cut.</p>
+    <div class="grid g3 rv">
+      <img src="assets/nm_swordeyes.jpg" alt="Warrior sighting along his blade" loading="lazy">
+      <img src="assets/nm_curvedsword.jpg" alt="Warrior with curved sword, close-up" loading="lazy">
+      <img src="assets/nm_grapple.jpg" alt="Duel locked at the lakeshore" loading="lazy">
+      <img src="assets/nm_goldenwide.jpg" alt="Arrows in flight, golden hour wide" loading="lazy">
+      <img src="assets/nm_horsemeet.jpg" alt="Rider meets archer by the water" loading="lazy">
+      <img src="assets/nm_archer.jpg" alt="Archer in traditional dress, warm grade" loading="lazy">
+      <img src="assets/nm_aerial.jpg" alt="Aerial of misty lakeshore, figures in flight" loading="lazy">
+      <img src="assets/nm_archercloseup.jpg" alt="Archer close-up with bow, golden light" loading="lazy">
+      <img src="assets/nm_topdown.jpg" alt="Top-down drone shot of the lakeshore duel" loading="lazy">
     </div>
-    <div class="grid g2" style="margin-top:10px">
-      <img src="assets/pilot_crane.jpg" alt="Operating camera on crane rig over water">
-      <img src="assets/pilot_crew.jpg" alt="Full crew photo with camera">
+    <div class="grid g2 rv" style="margin-top:12px">
+      <img src="assets/pilot_crane.jpg" alt="Operating camera on crane rig over water" loading="lazy">
+      <img src="assets/pilot_crew.jpg" alt="Full crew photo with camera" loading="lazy">
     </div>
   </div>
 </section>
 
 <section id="development">
-  <style>
-    .step{display:grid;grid-template-columns:190px 1fr;gap:26px;margin-top:44px;align-items:start}
-    .step .no{font-family:'Helvetica Neue',Arial,sans-serif;color:var(--accent);font-size:13px;letter-spacing:.2em;text-transform:uppercase;position:sticky;top:76px}
-    .step .no b{display:block;font-size:34px;color:var(--ink);font-weight:300;font-family:Georgia,serif;margin-bottom:4px}
-    .step p{color:var(--dim);font-size:15px;max-width:640px;margin-bottom:16px}
-    .swatches{display:flex;height:86px;border:1px solid var(--line);margin-bottom:16px}
-    .swatches div{flex:1;position:relative}
-    .swatches span{position:absolute;bottom:6px;left:8px;font-family:'Helvetica Neue',Arial,sans-serif;font-size:10.5px;letter-spacing:.08em;color:rgba(0,0,0,.55)}
-    @media(max-width:720px){.step{grid-template-columns:1fr;gap:10px}.step .no{position:static}}
-  </style>
   <div class="wrap">
-    <h2>In Development</h2>
-    <div class="title">Sanda Seivom</div>
-    <div class="meta"><b>Cinematographer / Color Design</b> · Pre-production</div>
-    <p class="body">A combat-sport drama set in Kannagi Nagar, Chennai — where a community's game becomes its weapon against a corrupted power. Script at draft 3 with scene breakdown. Below: how the film's color language is being designed, from the streets of the location to the final base palette and custom LUTs.</p>
-    <div class="step">
+    <div class="eyebrow rv">In Development</div>
+    <h2 class="big rv">Sanda Seivom</h2>
+    <div class="meta rv"><b>Cinematographer / Color Design</b> · Pre-production</div>
+    <p class="body rv">A combat-sport drama set in Kannagi Nagar, Chennai — where a community's game becomes its weapon against a corrupted power. Script at draft 3 with scene breakdown. Below: how the film's color language is being designed, from the streets of the location to the final base palette and custom LUTs.</p>
+
+    <div class="step rv">
       <div class="no"><b>01</b>Location Survey</div>
       <div>
         <p>The palette starts where the story lives. Kannagi Nagar photographed and street-viewed block by block — its resettlement housing, festival nights, and sun-bleached facades set the film's chromatic ground truth.</p>
         <div class="grid g2">
-          <img src="assets/ss_location.jpg" alt="Kannagi Nagar location survey collage">
-          <img src="assets/ss_street.jpg" alt="Kannagi Nagar street view used for color sampling">
+          <img src="assets/ss_location.jpg" alt="Kannagi Nagar location survey collage" loading="lazy">
+          <img src="assets/ss_street.jpg" alt="Kannagi Nagar street view used for color sampling" loading="lazy">
         </div>
       </div>
     </div>
 
-    <div class="step">
+    <div class="step rv">
       <div class="no"><b>02</b>Palette Extraction</div>
       <div>
         <p>Colors sampled directly from the location — steel-blue sky, lime-washed walls, dust, rust and autorickshaw orange — then structured on the wheel. Chosen harmony: <b style="color:var(--ink)">triad</b>.</p>
@@ -186,35 +254,35 @@
       </div>
     </div>
 
-    <div class="step">
+    <div class="step rv">
       <div class="no"><b>03</b>Paint Tests</div>
       <div>
         <p>The triadic scheme tested physically — watercolor mixes on paper before a single frame is graded. If it doesn't hold as pigment, it won't hold on screen.</p>
         <div class="grid g2">
-          <img src="assets/ss_paint.jpg" alt="Hand-painted triadic watercolor swatch tests">
-          <img src="assets/ss_colorref.jpg" alt="Photographic color reference frame">
+          <img src="assets/ss_paint.jpg" alt="Hand-painted triadic watercolor swatch tests" loading="lazy">
+          <img src="assets/ss_colorref.jpg" alt="Photographic color reference frame" loading="lazy">
         </div>
       </div>
     </div>
 
-    <div class="step">
+    <div class="step rv">
       <div class="no"><b>04</b>Texture &amp; Graffiti</div>
       <div>
         <p>Faded-tone graffiti and weathered-wall references define how color should age in the frame — worn, layered, sun-eaten. Watercolor textures guide diffusion and bleed for the grade.</p>
         <div class="grid g2">
-          <img src="assets/ss_graffiti.jpg" alt="Faded tone graffiti reference collage">
-          <img src="assets/ss_texture.jpg" alt="Texture and pattern watercolor references">
+          <img src="assets/ss_graffiti.jpg" alt="Faded tone graffiti reference collage" loading="lazy">
+          <img src="assets/ss_texture.jpg" alt="Texture and pattern watercolor references" loading="lazy">
         </div>
       </div>
     </div>
 
-    <div class="step">
+    <div class="step rv">
       <div class="no"><b>05</b>Base Palette</div>
       <div>
         <p>Everything resolves into the working base palette — the master swatch set that drives production design, costume, and the custom LUTs built for on-set monitoring and the final grade.</p>
         <div class="grid g2">
-          <img src="assets/ss_basepalette.jpg" alt="Final base palette grid with color wheel">
-          <img src="assets/ss_triad.jpg" alt="Graffiti triad palette">
+          <img src="assets/ss_basepalette.jpg" alt="Final base palette grid with color wheel" loading="lazy">
+          <img src="assets/ss_triad.jpg" alt="Graffiti triad palette" loading="lazy">
         </div>
       </div>
     </div>
@@ -222,49 +290,32 @@
 </section>
 
 <section id="stills">
-  <style>
-    .masonry{columns:3;column-gap:12px;margin-top:10px}
-    .ph{position:relative;display:block;margin:0 0 12px;break-inside:avoid;overflow:hidden;border:1px solid var(--line);cursor:zoom-in;background:#000}
-    .ph img{width:100%;display:block;transition:transform .5s ease,opacity .4s}
-    .ph:hover img{transform:scale(1.04);opacity:.92}
-    .ph figcaption{position:absolute;left:0;right:0;bottom:0;padding:26px 14px 12px;
-      background:linear-gradient(180deg,transparent,rgba(0,0,0,.75));color:#eee;
-      font-family:'Helvetica Neue',Arial,sans-serif;font-size:12px;letter-spacing:.08em;
-      opacity:0;transform:translateY(8px);transition:all .35s ease}
-    .ph:hover figcaption{opacity:1;transform:none}
-    @media(max-width:900px){.masonry{columns:2}}
-    @media(max-width:560px){.masonry{columns:1}}
-    #lb{position:fixed;inset:0;background:rgba(5,4,3,.96);z-index:100;display:none;align-items:center;justify-content:center;flex-direction:column}
-    #lb.open{display:flex}
-    #lb img{max-width:92vw;max-height:84vh;object-fit:contain;box-shadow:0 20px 60px rgba(0,0,0,.6)}
-    #lb .cap{color:#bbb;font-family:'Helvetica Neue',Arial,sans-serif;font-size:13px;letter-spacing:.1em;margin-top:14px}
-    #lb button{position:absolute;background:none;border:none;color:#888;font-size:34px;cursor:pointer;padding:16px;font-family:Georgia,serif}
-    #lb button:hover{color:var(--accent)}
-    #lb .x{top:10px;right:16px}
-    #lb .prev{left:6px;top:50%;transform:translateY(-50%)}
-    #lb .next{right:6px;top:50%;transform:translateY(-50%)}
-  </style>
   <div class="wrap">
-    <h2>Photography</h2>
-    <div class="title">Stills</div>
-    <p class="body">Documentary and travel work — the same eye, off set. Shimla, Spiti, Varanasi. Click any frame to view.</p>
-    <div class="masonry" id="gallery">
-      <figure class="ph"><img src="assets/ph_stairs.jpg" alt="Two worlds on a staircase, Shimla" loading="lazy"><figcaption>TWO WORLDS, ONE STAIRCASE — SHIMLA</figcaption></figure>
-      <figure class="ph"><img src="assets/ph_ridge_fog.jpg" alt="The Ridge in fog, Shimla" loading="lazy"><figcaption>THE RIDGE IN FOG — SHIMLA</figcaption></figure>
-      <figure class="ph"><img src="assets/photo_sadhu.jpg" alt="Portrait of a sadhu" loading="lazy"><figcaption>SADHU — VARANASI</figcaption></figure>
-      <figure class="ph"><img src="assets/ph_monks.jpg" alt="Young monks, Spiti" loading="lazy"><figcaption>YOUNG MONKS — SPITI</figcaption></figure>
-      <figure class="ph"><img src="assets/ph_strata.jpg" alt="Light on mountain strata" loading="lazy"><figcaption>LIGHT ON STRATA — SPITI</figcaption></figure>
-      <figure class="ph"><img src="assets/ph_bird.jpg" alt="Bird on a pole" loading="lazy"><figcaption>PERCH</figcaption></figure>
-      <figure class="ph"><img src="assets/photo_ghat.jpg" alt="Night fires on the ghats" loading="lazy"><figcaption>NIGHT FIRES ON THE GHATS — VARANASI</figcaption></figure>
-      <figure class="ph"><img src="assets/ph_buddha.jpg" alt="Buddha silhouette against clouds" loading="lazy"><figcaption>BUDDHA AGAINST THE SKY</figcaption></figure>
-      <figure class="ph"><img src="assets/ph_spiti_valley.jpg" alt="Spiti valley floor" loading="lazy"><figcaption>VALLEY FLOOR — SPITI</figcaption></figure>
-      <figure class="ph"><img src="assets/ph_tent.jpg" alt="Silhouettes through tent canvas" loading="lazy"><figcaption>THROUGH THE CANVAS</figcaption></figure>
-      <figure class="ph"><img src="assets/photo_harvest.jpg" alt="Harvest carrier in the Himalayas" loading="lazy"><figcaption>HARVEST — HIMALAYAS</figcaption></figure>
-      <figure class="ph"><img src="assets/ph_stones.jpg" alt="Stacked river stones" loading="lazy"><figcaption>BALANCE</figcaption></figure>
-      <figure class="ph"><img src="assets/ph_sunset_peak.jpg" alt="Last light on a snow peak" loading="lazy"><figcaption>LAST LIGHT — SPITI</figcaption></figure>
-      <figure class="ph"><img src="assets/ph_mannequin.jpg" alt="Sailor mannequins in a shop window" loading="lazy"><figcaption>SAILORS — SHOP WINDOW</figcaption></figure>
-      <figure class="ph"><img src="assets/photo_boats.jpg" alt="Boats at dawn" loading="lazy"><figcaption>DAWN BOATS — GANGA</figcaption></figure>
-      <figure class="ph"><img src="assets/ph_storm.jpg" alt="Storm over the valley" loading="lazy"><figcaption>STORM OVER THE VALLEY — SPITI</figcaption></figure>
+    <div class="eyebrow rv">Photography</div>
+    <h2 class="big rv">Stills</h2>
+    <p class="body rv">Documentary and travel work — the same eye, off set. Shimla, Spiti, Varanasi. Click any frame to view.</p>
+    <div class="filters rv">
+      <button class="fbtn on" data-f="all">All</button>
+      <button class="fbtn" data-f="bw">Black &amp; White</button>
+      <button class="fbtn" data-f="color">Color</button>
+    </div>
+    <div class="masonry rv" id="gallery">
+      <figure class="ph" data-cat="bw"><img src="assets/ph_stairs.jpg" alt="Two worlds on a staircase, Shimla" loading="lazy"><figcaption>TWO WORLDS, ONE STAIRCASE — SHIMLA</figcaption></figure>
+      <figure class="ph" data-cat="bw"><img src="assets/ph_ridge_fog.jpg" alt="The Ridge in fog, Shimla" loading="lazy"><figcaption>THE RIDGE IN FOG — SHIMLA</figcaption></figure>
+      <figure class="ph" data-cat="color"><img src="assets/photo_sadhu.jpg" alt="Portrait of a sadhu" loading="lazy"><figcaption>SADHU — VARANASI</figcaption></figure>
+      <figure class="ph" data-cat="bw"><img src="assets/ph_monks.jpg" alt="Young monks, Spiti" loading="lazy"><figcaption>YOUNG MONKS — SPITI</figcaption></figure>
+      <figure class="ph" data-cat="color"><img src="assets/ph_strata.jpg" alt="Light on mountain strata" loading="lazy"><figcaption>LIGHT ON STRATA — SPITI</figcaption></figure>
+      <figure class="ph" data-cat="bw"><img src="assets/ph_bird.jpg" alt="Bird on a pole" loading="lazy"><figcaption>PERCH</figcaption></figure>
+      <figure class="ph" data-cat="color"><img src="assets/photo_ghat.jpg" alt="Night fires on the ghats" loading="lazy"><figcaption>NIGHT FIRES ON THE GHATS — VARANASI</figcaption></figure>
+      <figure class="ph" data-cat="bw"><img src="assets/ph_buddha.jpg" alt="Buddha silhouette against clouds" loading="lazy"><figcaption>BUDDHA AGAINST THE SKY</figcaption></figure>
+      <figure class="ph" data-cat="color"><img src="assets/ph_spiti_valley.jpg" alt="Spiti valley floor" loading="lazy"><figcaption>VALLEY FLOOR — SPITI</figcaption></figure>
+      <figure class="ph" data-cat="bw"><img src="assets/ph_tent.jpg" alt="Silhouettes through tent canvas" loading="lazy"><figcaption>THROUGH THE CANVAS</figcaption></figure>
+      <figure class="ph" data-cat="color"><img src="assets/photo_harvest.jpg" alt="Harvest carrier in the Himalayas" loading="lazy"><figcaption>HARVEST — HIMALAYAS</figcaption></figure>
+      <figure class="ph" data-cat="bw"><img src="assets/ph_stones.jpg" alt="Stacked river stones" loading="lazy"><figcaption>BALANCE</figcaption></figure>
+      <figure class="ph" data-cat="color"><img src="assets/ph_sunset_peak.jpg" alt="Last light on a snow peak" loading="lazy"><figcaption>LAST LIGHT — SPITI</figcaption></figure>
+      <figure class="ph" data-cat="bw"><img src="assets/ph_mannequin.jpg" alt="Sailor mannequins in a shop window" loading="lazy"><figcaption>SAILORS — SHOP WINDOW</figcaption></figure>
+      <figure class="ph" data-cat="bw"><img src="assets/photo_boats.jpg" alt="Boats at dawn" loading="lazy"><figcaption>DAWN BOATS — GANGA</figcaption></figure>
+      <figure class="ph" data-cat="bw"><img src="assets/ph_storm.jpg" alt="Storm over the valley" loading="lazy"><figcaption>STORM OVER THE VALLEY — SPITI</figcaption></figure>
     </div>
   </div>
   <div id="lb">
@@ -274,49 +325,56 @@
     <div class="cap"></div>
     <button class="next" aria-label="Next">›</button>
   </div>
-  <script>
-  (function(){
-    var figs=[].slice.call(document.querySelectorAll('#gallery .ph')),
-        lb=document.getElementById('lb'),
-        im=lb.querySelector('img'), cap=lb.querySelector('.cap'), idx=0;
-    function show(i){idx=(i+figs.length)%figs.length;
-      im.src=figs[idx].querySelector('img').src;
-      cap.textContent=figs[idx].querySelector('figcaption').textContent;
-      lb.classList.add('open');}
-    figs.forEach(function(f,i){f.addEventListener('click',function(){show(i)})});
-    lb.querySelector('.x').onclick=function(){lb.classList.remove('open')};
-    lb.querySelector('.prev').onclick=function(e){e.stopPropagation();show(idx-1)};
-    lb.querySelector('.next').onclick=function(e){e.stopPropagation();show(idx+1)};
-    lb.addEventListener('click',function(e){if(e.target===lb)lb.classList.remove('open')});
-    document.addEventListener('keydown',function(e){
-      if(!lb.classList.contains('open'))return;
-      if(e.key==='Escape')lb.classList.remove('open');
-      if(e.key==='ArrowLeft')show(idx-1);
-      if(e.key==='ArrowRight')show(idx+1);});
-  })();
-  </script>
-</section>
-
-<section>
-  <div class="wrap">
-    <h2>Craft</h2>
-    <div class="title">What I Bring</div>
-    <div class="skills">
-      <div class="skill"><h3>Cinematography</h3><p>Feature, pilot and short-form. Crane, handheld and rigged work. Shot design built on classical painting and camera-angle grammar.</p></div>
-      <div class="skill"><h3>Color &amp; DI</h3><p>DaVinci Resolve grading, custom LUT development, EXR/ACES pipelines, OTT and theatrical deliverables.</p></div>
-      <div class="skill"><h3>Pre-production</h3><p>Palette and reference decks, location scouting, equipment lists, fight-choreo previz, scene breakdowns.</p></div>
-      <div class="skill"><h3>Edit &amp; Finish</h3><p>Trailer and reel cutting, VFX comp handling, delivery masters from teaser to full OTT package.</p></div>
-    </div>
-  </div>
 </section>
 
 <footer id="contact">
   <div class="wrap">
-    <h2>Contact</h2>
+    <div class="eyebrow">Contact</div>
+    <h2>Let's make the frame<br>worth holding.</h2>
     <a class="email" href="mailto:smnanda23@gmail.com">smnanda23@gmail.com</a>
-    <p>Chennai · Available for features, pilots, and commercial work</p>
+    <div class="soc">
+      <a href="https://www.imdb.com/title/tt32591988/" target="_blank" rel="noopener">IMDb</a>
+      <a href="https://linkedin.com/in/sm-nanda-kumar" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="../">AI / VFX Portfolio</a>
+    </div>
+    <p class="fine">Chennai · Available for features, pilots, and commercial work · Nandha © 2026</p>
   </div>
 </footer>
 
+<script>
+  var nav=document.getElementById('nav');
+  addEventListener('scroll',function(){nav.classList.toggle('scrolled',scrollY>24)},{passive:true});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+
+  /* gallery filters */
+  var figs=[].slice.call(document.querySelectorAll('#gallery .ph'));
+  document.querySelectorAll('.fbtn').forEach(function(b){
+    b.addEventListener('click',function(){
+      document.querySelectorAll('.fbtn').forEach(function(x){x.classList.remove('on')});
+      b.classList.add('on');
+      var f=b.dataset.f;
+      figs.forEach(function(fg){fg.classList.toggle('hide',f!=='all'&&fg.dataset.cat!==f)});
+    });
+  });
+
+  /* lightbox */
+  var lb=document.getElementById('lb'),im=lb.querySelector('img'),cap=lb.querySelector('.cap'),idx=0;
+  function vis(){return figs.filter(function(f){return !f.classList.contains('hide')})}
+  function show(i){var v=vis();idx=(i+v.length)%v.length;
+    im.src=v[idx].querySelector('img').src;
+    cap.textContent=v[idx].querySelector('figcaption').textContent;
+    lb.classList.add('open')}
+  figs.forEach(function(f){f.addEventListener('click',function(){show(vis().indexOf(f))})});
+  lb.querySelector('.x').onclick=function(){lb.classList.remove('open')};
+  lb.querySelector('.prev').onclick=function(e){e.stopPropagation();show(idx-1)};
+  lb.querySelector('.next').onclick=function(e){e.stopPropagation();show(idx+1)};
+  lb.addEventListener('click',function(e){if(e.target===lb)lb.classList.remove('open')});
+  document.addEventListener('keydown',function(e){
+    if(!lb.classList.contains('open'))return;
+    if(e.key==='Escape')lb.classList.remove('open');
+    if(e.key==='ArrowLeft')show(idx-1);
+    if(e.key==='ArrowRight')show(idx+1)});
+</script>
 </body>
 </html>
